@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Find My Ip Address, Gateway Address, and public Ip Address (WAN)</title>
+		<link rel="stylesheet" href="style.css"></link>
+	</head>
+	<body>
+		<h1><a href="study_information.html">WEB2-Home Server</a></h1>
+
+		<h2>IP 주소 알아내기 - private ip address</h2>
+		<img src="img/myIpAddress.jpg" alt="현재 저의 컴퓨터의 ip address 그리고 공유기의 gateway address 를 나타내고 있습니다." width="100%" height=auto>
+		<p>현재 위의 그림은 저의 컴퓨터의 네트워크 상태를 알려주고 있는 그림입니다. 여기에서 IP address 가 172.24.10.116 을 가지고 있는데 이것은 현재 나의 컴퓨터의 ip address 를 나타내고 있는 것 입니다. 그리고 Router 이라고 172.24.0.1 을 가지고 있는 항목이 보이는데 이것은 현재 집에 설치 되어진 router, 즉 공유기의 gateway address 를 가리키고 있는 것입니다.</p>
+
+		<h2>IP 주소 알아내기 - public ip address</h2>
+		<ul>
+			<li>terminal 에대가 아래의 명령어를 입력하면 공유기에 할당되어진 public ip address 를 확인할 수 있다</li>
+			<li>curl ifconfig.co</li>
+		</ul>
+		<img src="img/getPublicIpAddress_demo.jpg" alt="terminal 에서 공유기에 연결되어진 public ip address 를 구하는 방법을 설명하는 사진 입니다." width="100%" height=auto>
+	</body>
+</html>
