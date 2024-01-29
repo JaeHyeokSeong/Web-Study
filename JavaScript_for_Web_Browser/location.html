@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>문서의 주소정보를 알아내기</title>
+	</head>
+	<body>
+		<script>
+			let url = location.href;
+			document.write(url + '<br>');
+
+			let protocol = location.protocol;
+			document.write(protocol + '<br>');
+
+			let host = location.host;
+			document.write(host + '<br>');
+
+			let port = location.port;
+			document.write(port + '<br>');
+
+			let pathname = location.pathname;
+			document.write(pathname + '<br>');
+		</script>
+	</body>
+</html>

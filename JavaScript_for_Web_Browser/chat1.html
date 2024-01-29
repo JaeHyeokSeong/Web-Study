@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>CHAT 1</title>
+	</head>
+	<body>
+		<input type="button" value="open" onclick="openNewChat2();">
+		<input type="text" onkeypress="message(this.value);">
+		<input type="button" onclick="close();" value="close">
+		<script>
+			let win = null;
+
+			function openNewChat2() {
+				win = window.open('chat2.html', 'chat2');
+			}
+
+			function message(txt) {
+				if(win !== null) {
+					win.document.getElementById('message').innerText = txt;
+				}
+			}
+
+			function close() {
+				if(win !== null) {
+					win.close();
+				}
+			}
+		</script>
+	</body>
+</html>
