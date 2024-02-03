@@ -1,0 +1,19 @@
+<!DOCTYPE HEML>
+<html>
+	<body>
+		<ul>
+			<li>html</li>
+			<li class="active">css</li>
+			<li class="active">javascript</li>
+		</ul>
+
+		<script>
+			let liClassActive = document.getElementsByClassName('active');
+			console.log(liClassActive);
+
+			for(let i = 0; i < liClassActive.length; i++) {
+				liClassActive[i].style.color = "red";
+			}
+		</script>
+	</body>
+</html>

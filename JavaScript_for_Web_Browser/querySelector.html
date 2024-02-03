@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<h1>querySelector</h1>
+
+		<ul>
+			<li>html</li>	
+			<li>css</li>
+			<li>javascript</li>
+		</ul>
+		<ol>
+			<li>html</li>	
+			<li class="active">css</li>
+			<li>javascript</li>
+		</ol>
+
+		<script>
+			// querySelector 는 하나의 element 만 지정을 한다.
+			let li = document.querySelector('li');
+			console.log(li);
+			li.style.color = "red";
+
+			let liClassActive = document.querySelector('.active');
+			console.log(liClassActive);
+			liClassActive.style.color = "blue";
+		</script>
+	</body>
+</html>

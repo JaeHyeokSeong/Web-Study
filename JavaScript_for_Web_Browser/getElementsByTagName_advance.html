@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<body>
+	<ul>
+		<li>html</li>
+		<li>css</li>
+		<li>javascript</li>
+	</ul>	
+	<ol>	
+		<li>html</li>
+		<li>css</li>
+		<li>javascript</li>
+	</ol>
+	<script>
+		let ul = document.getElementsByTagName('ul')[0];
+		console.log(ul);
+		let ul_li = ul.getElementsByTagName('li');
+
+		for(let i = 0; i < ul_li.length; i++) {
+			ul_li[i].style.color = "blue";
+		}
+	</script>
+	</body>
+</html>

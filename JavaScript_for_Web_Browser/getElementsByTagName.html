@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<h1>getElementsByTagName</h1>
+
+		<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JavaScript</li>
+		</ul>
+
+		<a href="getElementsByTagName_advance.html">심화</a>
+
+		<script>
+			let lis = document.getElementsByTagName('li');
+			console.log(lis);
+			for(let i = 0; i < lis.length; i++) {
+				lis[i].style.color = "red";
+			}
+		</script>
+	</body>
+</html>
