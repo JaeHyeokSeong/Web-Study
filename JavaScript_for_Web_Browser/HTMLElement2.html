@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<a id="anchor" href="https://www.naver.com">naver</a>
+		<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li id="list">JavaScript</li>
+		</ul>
+		<input type="button" id="button" value="button">
+		<script>
+			let target = document.getElementById('list');
+			console.log(target.constructor.name);
+
+			target = document.getElementById('anchor');
+			console.log(target.constructor.name);
+
+			target = document.getElementById('button');
+			console.log(target.constructor.name);
+		</script>
+	</body>
+</html>

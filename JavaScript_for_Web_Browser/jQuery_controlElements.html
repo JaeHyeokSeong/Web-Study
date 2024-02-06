@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<ul>
+			<li class="active">HTML</li>
+			<li id="active">CSS</li>
+			<li class="active">JavaScript</li>
+		</ul>
+		<input type="button" value="$('li').css('color', 'red');" onclick="$('li').css('color', 'red');">	
+		<input type="button" value="$('.active').css('color', 'red');" onclick="$('.active').css('color', 'red');">
+		<input type="button" value="$('#active').css('color', 'red').css('textDecoration', 'underline');" onclick="$('#active').css('color', 'red').css('textDecoration', 'underline');">
+	</body>
+</html>
+

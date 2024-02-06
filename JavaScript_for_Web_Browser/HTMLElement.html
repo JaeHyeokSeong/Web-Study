@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li id="active">JavaScript</li>
+		</ul>
+
+		<script>
+			let li = document.getElementById('active');
+			console.log(li.constructor.name, "단수");
+			let lis = document.getElementsByTagName('li');
+			console.log(lis.constructor.name, "복수");
+		</script>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li id="active">JavaScript</li>
+
+		<script>
+			console.group('before');
+			let lis = document.getElementsByTagName('li');
+			for(let i = 0; i < lis.length; i++) {
+				console.log(lis[i]);
+			}
+			console.log(lis);
+			for(let i = 0; i < lis.length; i++) {
+				console.log(lis[i].innerHTML);
+			}
+			console.groupEnd();
+
+			console.group('after');
+//			lis[1].parentNode.removeChild(lis[1]);
+			lis[1].remove();
+			for(let i = 0; i < lis.length; i++) {
+				console.log(lis[i]);
+			}
+			console.log(lis);
+			for(let i = 0; i < lis.length; i++) {
+				console.log(lis[i].innerHTML);
+			}
+			console.groupEnd();
+		</script>
+	</body>
+</html>
