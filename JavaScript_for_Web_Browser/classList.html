@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style>
+			#text-add-delete {
+				height: 50px;
+				width: 250px;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Element.classList</h3>
+		<ul>
+			<li>html</li>
+			<li>css</li>
+			<li id="active">js</li>
+		</ul>
+
+		<input type="button" value="DOMTokenList" onclick="getDOMTokenList();">
+		<input type="button" value="조회" onclick="viewClassList()">
+		<div>
+			<input id="text-add-delete" type="text" placeholder="추가 또는 제거할 class 이름을 적어 주세요.)">
+			<input type="button" value="추가" onclick="addClassList();">
+			<input type="button" value="삭제" onclick="removeClassList();">
+	</div>	
+		<script>
+			function getDOMTokenList() {
+				let active = document.getElementById('active');
+				console.log(active.classList);
+			}
+
+			function viewClassList() {
+				let active = document.getElementById('active');
+				for(let i = 0; i < active.classList.length; i++) {
+					console.log(active.classList[i]);
+				}
+			}
+
+			function addClassList() {
+				let input = document.getElementById('text-add-delete');
+				if(input.value !== '' && input.value.indexOf(' ') < 0) {
+					document.getElementById('active').classList.add(input.value);
+				} else {
+					alert('잘못되어진 class 입력 값 입니다.');
+				}
+			}
+
+			function removeClassList() {
+				let input = document.getElementById('text-add-delete');
+				if(input.value !== '' && input.value.indexOf(' ') < 0) {
+					document.getElementById('active').classList.remove(input.value);
+				} else {
+					alert('잘못되어진 class 입력 값 입니다.');
+				}
+			}
+		</script>
+	</body>
+</html>
