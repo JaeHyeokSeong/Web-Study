@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body id="start">
+		<ul>
+			<li><a>html</a></li>
+			<li><a>css</a></li>
+			<li><a>js</a>
+				<ul>
+					<li><a>js</a></li>
+					<li><a>DOM</a></li>
+					<li><a>BOM</a></li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			let start = document.getElementById('start');
+			console.log(start.firstChild);
+			let ul = start.firstChild.nextSibling;
+			console.log(ul);
+			console.log(ul.nextSibling);
+			console.log(ul.nextSibling.nextSibling);
+			console.log(ul.childNodes);
+			console.log(ul.childNodes[1]);
+			console.log(ul.parentNode);
+		</script>
+	</body>
+</html>

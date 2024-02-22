@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<ul id="target">
+			<li>CSS</li>
+		</ul>
+		<input type="button" onclick="beforebegin()" value="beforebegin">
+		<input type="button" onclick="afterbegin()" value="afterbegin">
+		<input type="button" onclick="beforeend()" value="beforeend">
+		<input type="button" onclick="afterend()" value="afterend">
+
+		<script>
+			function beforebegin() {
+				let target = document.getElementById('target');
+				target.insertAdjacentHTML('beforebegin', '<h1>Client Side</h1>');
+			}
+			function afterbegin() {
+				let target = document.getElementById('target');
+				target.insertAdjacentHTML('afterbegin', '<li>HTML</li>');
+			}
+			function beforeend() {
+				let target = document.getElementById('target');
+				target.insertAdjacentHTML('beforeend', '<li>js</li>');
+			}
+			function afterend() {
+				let target = document.getElementById('target');
+				target.insertAdjacentHTML('afterend', '<h1>Sever Side</h1>');
+			}
+		</script>
+	</body>
+</html>

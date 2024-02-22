@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body id="start">
+		<ul>
+			<li><a href="">html</a></li>
+			<li><a href="">css</a></li>
+			<li><a href="">js</a>
+				<ul>
+					<li><a href="">js core</a></li>
+					<li><a href="">DOM</a></li>
+					<li><a href="">BOM</a></li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			function traversal(target, func) {
+				if(target.nodeType === 1) {
+					func(target);
+					console.log(target.nodeName);
+					let childNodes = target.childNodes;
+					for(let i = 0; i < childNodes.length; i++) {
+						traversal(childNodes[i], func);
+					}
+				}
+			}	
+
+			traversal(document.getElementById('start'), function(target){if(target.nodeName === 'A') {target.style.backgroundColor="red"}});
+		</script>
+	</body>
+</html>

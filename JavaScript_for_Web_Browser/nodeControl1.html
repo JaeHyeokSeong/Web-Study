@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<ul id="target">
+			<li>HTML</li>
+			<li>CSS</li>
+		</ul>
+		<input type="button" onclick="get();" value="get">
+		<input type="button" onclick="set();" value="set">
+		<script>
+			function get() {
+				let target = document.getElementById('target');
+				alert(target.outerHTML);
+			}
+
+			function set() {
+				let target = document.getElementById('target');
+				target.outerHTML = "<ol id='target'><li>js core</li><li>BOM</li><li>DOM</li></ol>"
+			}
+		</script>
+	</body>
+</html>

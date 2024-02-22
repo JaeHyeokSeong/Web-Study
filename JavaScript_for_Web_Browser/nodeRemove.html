@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<ul>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li id="target">JavaScript</li>
+		</ul>
+		<input type="button" onclick="callRemoveChild();" value="removeChild()">
+		<script>
+			function callRemoveChild() {
+				let target = document.getElementById('target');
+				target.parentNode.removeChild(target);
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<a id="target" href="https://www.google.com">google 바로가기</a>
+
+		<script>
+			let t = document.getElementById('target');
+			console.log(t.getAttribute('href'));
+			t.setAttribute('title', 'google 바로가기');
+			console.log(t.hasAttribute('title'));
+			t.removeAttribute('title');
+			console.log(t.hasAttribute('title'));
+		</script>
+	</body>
+</html>

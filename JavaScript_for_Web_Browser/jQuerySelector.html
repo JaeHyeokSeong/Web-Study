@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<ul>
+			<li class="marked">html</li>
+			<li>css</li>
+			<li id="active">js
+				<ul>
+					<li>js core</li>
+					<li class="marked">DOM</li>
+					<li class="marked">BOM</li>
+				</ul>
+			</li>
+		</ul>	
+
+		<script>
+//			$('.marked', '#active').css('background-color', 'red');
+			$('#active .marked').css('background-color', 'red');
+		</script>
+	</body>
+</html>

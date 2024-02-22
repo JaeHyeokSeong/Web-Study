@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<p id="target1">hello world</p>
+		<p id="target2">HELLO WORLD</p>
+		<script>
+			let t = document.getElementById('target1');
+			t.setAttribute('class', 'important');
+
+			t = document.getElementById('target2');
+			t.className = 'important';
+		</script>
+
+		<a id="target" href="./attribute_property.html">refresh</a>
+		<script>
+			// method 그리고 property 사용에 따라 값이 다르게 나오기도 한다.
+			let target = document.getElementById('target');
+			console.log(target.href);
+			console.log(target.getAttribute('href'))
+		</script>
+	</body>
+</html>
