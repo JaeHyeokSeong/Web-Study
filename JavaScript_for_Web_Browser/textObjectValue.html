@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<ul>
+			<li id="target">html</li>
+			<li>css</li>
+			<li>js</li>
+		</ul>
+		<input type="text" id="updateValue"  placehold="enter text at here">
+		<input type="button" onclick="updateText();" value="update">
+		<script>
+			let t = document.getElementById('target');
+			console.log(t.firstChild.nodeValue);
+			console.log(t.firstChild.data);
+			
+			function updateText() {
+				t.firstChild.nodeValue = document.getElementById('updateValue').value; 
+			}
+		</script>
+	</body>
+</html>

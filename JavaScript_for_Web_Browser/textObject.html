@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<p id="target1"><span>Hello World</span></p>
+		<p id="target2">
+			<span>HELLO WORLD</span>
+		</p>
+		<script>
+			let  t1 = document.getElementById('target1').firstChild;
+			let  t2 = document.getElementById('target2').firstChild;
+
+			console.log(t1.firstChild.nodeValue);
+			console.log(t2.nextSibling.firstChild.nodeValue);
+		</script>
+	</body>
+</html>
