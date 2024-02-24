@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<p id="exampleGet">AJAX - GET</p>
+		<p id="timezones"></p>
+		<input type="button" id="getTimezones" value="execute">
+		<p id="examplePost">AJAX - POST</p>	
+		<input type="text" id="id" placeholder="id">
+		<input type="password" id="password"  placeholder="password">
+		<input type="text" id="email"  placeholder="email">	
+		<input type="button" id="execute" value="execute">
+
+		<script>
+			$('#execute').click(function(event) {
+				let id = $('#id').val();
+				let password = $('#password').val();
+				let email = $('#email').val();
+				let postData = {
+					'id': id,
+					'password': password,
+					'email': email
+				}
+
+				$.ajax({
+					url: {{url_for("ajax_post")}},
+					type: 'post',
+					data: JSON.stringify(postData),
+					dataType: 'json',
+					contentType: 'application/json',
+					success: function(data) {
+						alert('SUCESS: ' + data['id'] + ' ' + data['password'] + ' ' + data['email'])
+					}
+				})
+			});
+
+
+			$('#getTimezones').click(function(event){
+				$.ajax({
+					url: {{url_for('ajax_get')}},
+					type: 'get',
+					data: JSON.stringify({'time': 'hour:minute:second'}),
+					dataType: 'json',
+					contentType: 'application/json',
+					success: function(data) { 
+						txt = '';
+						for(name in data) {
+							txt += (data[name] + ':')
+						}
+						txt = txt.slice(0, txt.length - 1);
+						$('#timezones').text(txt);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

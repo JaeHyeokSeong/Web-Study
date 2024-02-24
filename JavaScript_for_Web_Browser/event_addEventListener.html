@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<input type="button" id="target" value="button">
+		<input type="button" id="target1" value="button">
+		<input type="button" id="t1" value="t1">
+		<input type="button" id="t2" value="t2">
+
+		<script>
+			let t = document.getElementById('target');
+			t.addEventListener('click', function(event) {
+				alert('hello world ' + event.target.value);
+			});
+
+			let t1 = document.getElementById('target1');
+			t1.addEventListener('click', function() {
+				alert('hello');
+			});
+			t1.addEventListener('click', function() {
+				alert('world');
+			});
+
+			function btn_listener(event) {
+				switch(event.target.id) {
+					case 't1':
+						alert('t1');
+						break;
+					case 't2':
+						alert('t2');
+						break;
+				}
+			}
+			let a = document.getElementById('t1');
+			let b = document.getElementById('t2');
+			a.addEventListener('click', btn_listener);
+			b.addEventListener('click', btn_listener);	
+		</script>
+	</body>
+</html>

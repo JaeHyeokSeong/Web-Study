@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<p><label>prevent label</label><input id="prevent" type="checkbox" name="eventprevent" value="on"></p>
+		<p><a href="https://google.com" onclick="if(document.getElementById('prevent').checked) return false;">google</a></p>
+		<p>
+			<form action="https://opentutorials.org" onsubmit="if(document.getElementById('prevent').checked) return false;">
+				<input type="submit">
+			</form>
+		</p>
+	</body>
+</html>
