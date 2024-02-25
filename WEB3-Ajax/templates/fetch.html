@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head></head>
+	<body>
+		<article></article>
+		<input type="button" value="fetch" onclick="
+			/*fetch('/html/').then(function(response) {
+				response.json().then(function(data) {
+					console.log(data);	
+					document.querySelector('article').innerHTML = data['header'] + data['paragraph']	
+				})
+			})*/
+		">
+
+		<script>
+			document.querySelector('input').addEventListener('click', function(event) {
+				fetch('/html/').then(function(response){
+					if(response.status === 404) {
+						alert('file not found');
+					} 
+				});	
+				console.log(1);
+				console.log(2);
+			});
+		</script>
+	</body>
+</html>
