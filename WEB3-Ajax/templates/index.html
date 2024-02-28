@@ -24,11 +24,6 @@
 			});
 		}
 
-		if(location.hash) {
-			console.log(location.hash.substr(2));
-			callFetch(location.hash.substr(2));
-		}
-
 		fetch('/list/').then(function(response) {
 			response.json().then(function(data) {
 				let _list_data = data['list']
@@ -36,7 +31,6 @@
 				let list_data = ''
 				for(let i = 0; i < _list_data.length; i++) {
 					list_data += "<li><a onclick=\"callFetch('" + _list_data[i]  + "');\">" + _list_data[i] + "</a></li>" 
-					console.log(list_data);
 				}
 				document.getElementById('nav').innerHTML = list_data
 			})
