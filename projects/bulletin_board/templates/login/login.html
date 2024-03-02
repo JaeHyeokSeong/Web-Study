@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/login/login.css') }}">
+		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<form action="{{ url_for('login.login_stage') }}" method="POST" id="form">
+			<input type="email" id="email" name="email" placeholder="이메일" title="이메일">
+			<input type="password" id="pw" name="pw" placeholder="비밀번호" title="비밀번호">
+			<input type="submit" id="submit" value="로그인">
+		</form>
+		<ul>
+			<li><a target="_blank" href="{{ url_for('login.find_password') }}">비밀번호 찾기</a></li>
+			<li><a target="_blank" href="{{ url_for('signup.signup_stage') }}">회원가입</a></li>
+		</ul>	
+		<script>
+			$('#form').submit(function(event) {
+				const email = $('#email').val();
+				const pw = $('#pw').val();
+				if(email === '' || pw === '') {
+					event.preventDefault();
+					alert('이메일 그리고 비밀번호를 입력해주세요.');
+				}	
+			});	
+		</script>
+	</body>
+</html>

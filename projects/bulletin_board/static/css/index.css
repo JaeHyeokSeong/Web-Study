@@ -1,0 +1,72 @@
+body {
+	font-family: "Nanum Gothic Coding"	
+}
+
+#heading {
+	color: #124769;
+	text-align: center;
+	padding-top: 30px;
+}
+
+#search_bar {
+	border: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+    padding-bottom: 30px;
+}
+
+#search_tools {
+	display: flex;
+	justify-content: center;
+	padding-top: 20px;
+    padding-bottom: 20px;
+	gap: 4px;
+	background-color: #F4F4F4;
+}
+
+#q_search_by_options {
+	width: 120px;
+	height: 40px;
+	font-size: 18px;
+}
+
+#q_searchVal {
+	width: 550px;
+	font-size: 18px;
+}
+
+#q_search_button, #q_searchVal_reset {
+	background-color: #004fa8;
+	color: #fff;
+	width: 80px;
+	font-size: 17px;
+}
+
+#postings {
+	width: 100%;
+	border: 1px solid;	
+	border-collapse: collapse;
+}
+
+#postings_header {
+	height: 40px;
+	border-bottom: 1px solid black;
+}
+
+#postings_header > tr {
+	background-color: #F4F4F4;
+}
+
+#postings_info > tr {
+	height: 70px;
+	border-bottom: 1px solid black;
+}
+
+#postings_info > tr > td {
+	text-align: center;
+}
+
+th, td {
+	border-right: 1px solid black;
+}
+

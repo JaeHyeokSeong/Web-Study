@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<h1 id="heading">자유게시판</h1>
+		<div>
+			<ul>
+			{% if session['user'] %}
+				<li><a href="{{ url_for('account.manage_my_account') }}">계정관리</a></li>
+				<li><a href="{{ url_for('login.logout_stage') }}">로그아웃</a></li>
+			{% else %}
+				<li><a href="{{ url_for('login.login_stage') }}">로그인하세요</a></li>
+			{% endif %}
+			</ul>
+		</div>
+		<form>
+			<fieldset id="search_bar">
+				<div id="search_tools">
+					<select id="q_search_by_options">
+						<option value="search_by_title">제목</option>
+					</select>
+					<input type="text" name="q_searchVal" id="q_searchVal" placeholder="검색어를 입력하세요.">
+					<button type="submit" id="q_search_button">검색</button>
+					<button type="button" id="q_searchVal_reset">초기화</button>
+				</div>
+			</fieldset>	
+		</form>
+		<table id="postings">
+			<thead id="postings_header">
+				<tr>
+					<th>순번</th>
+					<th>제목</th>
+				</tr>
+			</thead>
+			<tbody id="postings_info">
+				<tr>
+					<td>1</td>
+					<td>제목이 들어가는 곳</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>제목이 들어가는 곳</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>제목이 들어가는 곳</td>
+				</tr>
+			</tbody>
+		</table>
+		<script src="{{ url_for('static', filename='js/discussionForum/discussionForum.js') }}"></script>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/login/login.css') }}">
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<form action="{{ url_for('signup.signup_stage') }}" method="POST" id="login_form">
+			<input type="email" id="email" name="email" placeholder="이메일주소">
+			<input type="password" id="pw" name="pw" placeholder="비밀번호" title="비밀번호">
+			<input type="text" id="name" name="name" placeholder="이름">
+			<button type="button" id="btn_submit">인증요청</button>
+		</form>
+		<script>
+			function checkAllInput() {
+				let email = $('#email').val();
+				let pw = $('#pw').val();
+				let name = $('#name').val();
+				let result = true;
+
+				if(email === '') {
+					$('#email').attr('placeholder', '이메일주소: 필수 정보입니다.');
+					result = false;
+				} 
+				if(pw === '') {
+					$('#pw').attr('placeholder', '비밀번호: 필수 정보입니다.');
+					result = false;
+				}
+				if(name === '') {
+					$('#name').attr('placeholder', '이름: 필수 정보입니다.');
+					result = false;
+				}
+				return result;
+			}
+
+			document.getElementById('btn_submit').addEventListener('click', function(event) {
+				if(!checkAllInput()) return false; 
+
+				document.getElementById('btn_submit').innerHTML = '인증요청됨';
+				
+				if(!document.getElementById('entered_verification') && !document.getElementById('submit_verfication')) {
+					let login_form = document.getElementById('login_form');
+					let verification_input = document.createElement('input');
+					verification_input.setAttribute('type', 'text');
+					verification_input.setAttribute('id', 'entered_verification');
+					verification_input.setAttribute('placeholder', '인증코드를 입력해주세요');
+					login_form.appendChild(verification_input);
+
+					let verification_submit = document.createElement('button');
+					verification_submit.setAttribute('type', 'button');
+					verification_submit.setAttribute('id', 'submit_verfication');
+					verification_submit.innerHTML = '인증코드 확인하기';
+						
+					verification_submit.addEventListener('click', function(event) {
+						entered_verification = document.getElementById('entered_verification').value;
+						verification_data = {"entered_verification": entered_verification}
+
+						$.ajax({
+							url: "{{ url_for('signup.verify_code') }}",
+							type: "POST",
+							data: JSON.stringify(verification_data),
+							dataType: "JSON",
+							contentType: "application/json",
+							success: function(result) {
+								console.log(result)
+								if(result['result'] === 'True') {
+									login_form.submit();
+								} else if(result['result'] === 'False') {
+									if(!document.getElementById('wrong_verification')) {
+										let wrong_verification = document.createElement('p');
+										wrong_verification.setAttribute('id', 'wrong_verification');
+										wrong_verification.innerHTML = '인증코드가 틀렸습니다'
+										verification_input.after(wrong_verification);
+									}
+								}
+							}
+						})
+					});
+					login_form.appendChild(verification_submit);
+				}
+			});
+		</script>
+	</body>
+</html>
